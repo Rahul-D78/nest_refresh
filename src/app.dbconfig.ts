@@ -9,7 +9,7 @@ import { UserEntity } from './entities/user.entity';
         TypeOrmModule.forRoot({
             type: 'postgres',
             username: 'devuser',
-            password: 'devpasss',
+            password: 'devpass',
             database: 'devdb',
             entities: [UserEntity, ArticleEntity],
             dropSchema: true,
