@@ -33,6 +33,5 @@ jobs:
       - run: npm i -g yarn
       - run: sleep 2
       - run: yarn
-      - run: yarn run build --if-present
       - run: yarn audit --fix
       - run: yarn run test
