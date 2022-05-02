@@ -1,0 +1,21 @@
+version: "3"
+services:
+  twiter-node-backend:
+    build: . 
+    restart: always
+    ports:
+      - "3000:3000"
+    links:
+      - "postgres:postgres"
+    depends_on:
+      - "postgres"
+    environment:
+      WAIT_HOSTS: postgres:5432
+      NODE_ENV: production
+  postgres:
+    image: "postgres:13-alpine"
+    restart: always
+    volumes:
+      - "/var/pg-data1:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_PASSWORD: devpass
